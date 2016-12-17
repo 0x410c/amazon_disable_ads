@@ -22,7 +22,7 @@ $ adb shell
 $ /data/local/tmp/dirtycow /system/bin/run-as /data/local/tmp/shell
 $ run-as
 > rm /data/data/com.android.systemui/files/boot.ad
-> rm /data/data/com.android.systemui/files/boot.ad
+> rm /data/data/com.android.systemui/files/boot.ad.image
 ```
 
 
