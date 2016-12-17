@@ -1,10 +1,8 @@
 # Disable Amazon Ads (Using Exploit CVE-2016-5195)
 
-I was under the pump for Androids next security update to remove dirty cow exploit, hence the code is very rough.
-There is a small chance that future OTA's will not renable the ad application after it is disabled using this exploit.
-So I wanted to push out a version to as many people as possible before the security update/OTAs arrived for the device.
+Androids next Dec/Nov security update removes the exploit used here. I wanted to push out this software to as many people as possible before the next security update/OTAs arrived for the device.
 
-This git repo is half of the story, but I checked in some of my files historical purposes.
+This git repo is half of the story, but I checked in some of my files for historical purposes.
 The other half of the story is the app I developed to do disable the ads without using the shell context
 TODO upload that source. 
 
