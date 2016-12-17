@@ -16,7 +16,8 @@
 #include <android/log.h>
 #define LOGV(...) { __android_log_print(ANDROID_LOG_INFO, "exploit", __VA_ARGS__); printf(__VA_ARGS__); printf("\n"); fflush(stdout); }
 #else
-#define LOGV(...) 
+//#define LOGV(...) printf(__VA_ARGS__); printf("\n"); fflush(stdout);
+#define LOGV(...)
 #endif
 
 #define LOOP   0x100000
@@ -73,6 +74,10 @@ static void *procselfmemThread(void *arg)
 	for (i = 0; i < LOOP; i++) {
 		lseek(fd, (off_t)mem_arg->offset, SEEK_SET);
 		c += write(fd, p, mem_arg->patch_size);
+                if ((i % PAGE_SIZE) == 0) {
+                    printf("tried to patch\n");
+                    fflush(stdout);
+                }
 	}
 
 	LOGV("[*] /proc/self/mem %d %i", c, i);
@@ -174,6 +179,7 @@ int main(int argc, char *argv[])
 	close(f);
 	// to put back
 	/*exploit(&mem_arg, 0);*/
+        LOGV("Done The Cow");
 
 	return 0;
 }
