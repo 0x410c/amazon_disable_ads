@@ -6,4 +6,4 @@ ifdef DEBUG
 endif
 
 %: %.c
-	$(TOOLROOT)gcc $(CFLAGS) -march=armv7-a -fPIE -pie $^ -o $@ $(LDFLAGS)
+	$(TOOLROOT)gcc $(CFLAGS) -march=armv7-a -fPIE -pie $^ -o $@ -llog $(LDFLAGS)
